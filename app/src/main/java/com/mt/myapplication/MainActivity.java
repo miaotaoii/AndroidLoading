@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                         loadingManager.hideSuccess("loading success", new LoadingDialog.OnDialogDismissedListener() {
+                         loadingManager.hideSuccess("加载成功", new LoadingDialog.OnDialogDismissedListener() {
                             @Override
                             public void onDialogDismissed() {
                                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         });
 
                     }
-                }, 3000);
+                }, 1000);
                 break;
         }
     }

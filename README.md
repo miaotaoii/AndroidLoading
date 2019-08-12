@@ -10,14 +10,13 @@ gradle
 
 ## 使用方法：
 
- private LoadingManager loadingManager;
+    private LoadingManager loadingManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        loadingManager = new LoadingManager(this);
+         loadingManager = new LoadingManager(this);
     }
     ...
     @Override

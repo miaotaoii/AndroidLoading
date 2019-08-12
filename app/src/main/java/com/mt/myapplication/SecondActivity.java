@@ -29,8 +29,15 @@ public class SecondActivity extends Activity implements View.OnClickListener {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        loadingManager.changeText("显示加载过程...");
+
+                    }
+                }, 1000);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
                         //   LoadingManager.getInstance().hideSuccess("loading success");
-                        loadingManager.hideError("loading error", new LoadingDialog.OnDialogDismissedListener() {
+                        loadingManager.hideError("加载失败", new LoadingDialog.OnDialogDismissedListener() {
                             @Override
                             public void onDialogDismissed() {
                                 finish();
@@ -38,7 +45,7 @@ public class SecondActivity extends Activity implements View.OnClickListener {
                         });
 
                     }
-                }, 3000);
+                }, 2000);
                 break;
         }
     }
