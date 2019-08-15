@@ -9,7 +9,7 @@ gradle
 	        implementation 'com.github.miaotaoii:AndroidLoading:v1.0'
 	}
 
-## 使用方法：
+## Usage：
 
     private LoadingManager loadingManager;
 
@@ -30,50 +30,35 @@ gradle
                         }
                     });
                     
-## 接口说明：
+### 显示默认Loading：
+    loadingManager.show();
+### 显示Loading并设置底部文字：
+    loadingManager.show("客官稍等呀...");
+### 隐藏Loading Dialog并设置隐藏后的回调，如不需要传入null：
+     loadingManager.hide(null);
+### 加载成功时隐藏Loading Dialog并设置隐藏后的回调，如不需要传入null：
+     loadingManager.hideSuccess("加载成功", new LoadingDialog.OnDialogDismissedListener() {
+     		 @Override
+      		public void onDialogDismissed() {
+              Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+              startActivity(intent);
+              }
+      });
+### 加载失败时隐藏Loading Dialog并设置隐藏后的回调，如不需要传入null：
+     loadingManager.hideError("加载失败", new LoadingDialog.OnDialogDismissedListener() {
+          @Override
+          public void onDialogDismissed() {
+                finish();
+          }
+          });
+### 加载Loading时改变文字：
+     loadingManager.changeText("加载进度50%...");
+
+
+
+
+
+
+
+
  
-
-
-    /**
-     * 显示loading 并带默认字符串信息（"加载中..."）
-     */
-    void show();
-    
-     /**
-     * 显示loading 并带字符串信息
-     *
-     * @param showText
-     */
-    void show(String showText);
-
-    /**
-     * 加载失败时隐藏loading
-     *
-     * @param hideText                  底部文字
-     * @param onDialogDismissedListener 隐藏后的回调，如不需要传入null
-     */
-    void hideError(String hideText, LoadingDialog.OnDialogDismissedListener onDialogDismissedListener);
-
-
-    /**
-     * 加载成功时隐藏loading
-     *
-     * @param hideText 底部文字
-     * @param listener 隐藏后的回调，如果不需要传入null
-     */
-    void hideSuccess(String hideText, LoadingDialog.OnDialogDismissedListener listener);
-
-    /**
-     * 不显示加载结果动画，直接隐藏
-     *
-     * @param listener 隐藏后的回调，如果不需要传入null
-     */
-    void hide(LoadingDialog.OnDialogDismissedListener listener);
-
-    /**
-     * 更新加载中的文字
-     *
-     * @param newText 更新的文字
-     */
-    void changeText(String newText);
-
