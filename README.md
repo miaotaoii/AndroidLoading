@@ -1,5 +1,5 @@
 # AndroidLoading
-## 简单的Loading 加载库
+
 
 ![预览](https://github.com/miaotaoii/AndroidLoading/blob/master/show.gif?raw=true)
 ## 添加依赖: 
